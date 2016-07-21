@@ -5,6 +5,9 @@ Con este repositorio se pretende listar todos los ejercicios y tareas de este cu
 en https://www.coursera.org/learn/angular-js
 
 ## recomendaciones
-- Es necesario instalar <strong>nodejs</strong> el cual a su vez installa el manejador de paquetes <strong>NPM</strong>
-- Debemos instalar el administrador de paquetes web bower con <code>npm install -g bower</code>
-- Siempre al descargar el proyecto o una rama debemos correr <code>bower install</code> y <code>npm install</code>
+- Es necesario leer el archivo NEWS dentro del proyecto ya que alli se indica
+  el orden y nombre de las ramas, las cuales nos indican la secuencia del curso
+  y los pasos que se llevaron a cabo.
+- En el código solo se explica Angular, sin embargo a lo largo del curso se usa
+  boostrap, librerias o css para los cuales existe otro curso (I, II) que pueden
+  consultar en la página https://www.coursera.org/specializations/full-stack

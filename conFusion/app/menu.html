@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app>
+<!--ng-app le dice al html que será una aplicación de angular-->
 
 <head>
     <meta charset="utf-8">
@@ -64,10 +65,18 @@
                        comment: ''
                     }
                     ]">
+                    <!--
+                        ng-init permite inicializar una expresión desde el html
+                        pero en projectos reales no deberia usarse, se debería
+                        hacer en un controlador.
+                    -->
         <div class="row row-content">
             <div class="col-xs-12">
                 <ul class="media-list">
                     <li class="media" ng-repeat="dish in dishes">
+                      <!-- ng-repeat permite recorrer una expresión ya sea de tipo
+                          objeto o array
+                      -->
                         <div class="media-left media-middle">
                             <a href="#">
                                 <img class="media-object img-thumbnail" ng-src={{dish.image}} alt="Uthappizza">
@@ -81,6 +90,11 @@
                             <p>Comment: {{dish.comment}}</p>
                             <p>Type your comment:
                                 <input type="text" ng-model="dish.comment">
+                                <!-- ng-model permite atar un campo a una
+                                     expresión,, esto quiere decir que si
+                                     escribimos algo en el campo inmediatamente
+                                     se cambia en la expresión.
+                                -->
                             </p>
                         </div>
                     </li>
