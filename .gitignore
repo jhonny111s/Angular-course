@@ -1,0 +1,5 @@
+# Dependency directories
+node_modules
+
+#Componentes bower
+bower_components
