@@ -1,110 +1,120 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
-<!--ng-app le dice al html que será una aplicación de angular-->
+<html lang="en" ng-app="confusionApp">
+<!--ng-app le dice al html que será una aplicación de angular
+y buscara en el script la confusionApp-->
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head
-         content must come *after* these tags -->
-    <title>Ristorante Con Fusion: Menu</title>
-    <!-- Bootstrap -->
-    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="styles/bootstrap-social.css" rel="stylesheet">
-    <link href="styles/mystyles.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head
+       content must come *after* these tags
+  -->
+  <title>Ristorante Con Fusion: Menu</title>
+  <!-- Bootstrap -->
+  <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="styles/bootstrap-social.css" rel="stylesheet">
+  <link href="styles/mystyles.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
 </head>
 
 <body>
-
-    <div class="container" ng-init="
-            dishes=[
-                     {
-                       name:'Uthapizza',
-                       image: 'images/uthapizza.png',
-                       category: 'mains',
-                       label:'Hot',
-                       price:'4.99',
-                       description:'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
-                       comment: ''
-                    },
-                    {
-                       name:'Zucchipakoda',
-                       image: 'images/zucchipakoda.png',
-                       category: 'appetizer',
-                       label:'',
-                       price:'1.99',
-                       description:'Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce',
-                       comment: ''
-                    },
-                    {
-                       name:'Vadonut',
-                       image: 'images/vadonut.png',
-                       category: 'appetizer',
-                       label:'New',
-                       price:'1.99',
-                       description:'A quintessential ConFusion experience, is it a vada or is it a donut?',
-                       comment: ''
-                    },
-                    {
-                       name:'ElaiCheese Cake',
-                       image: 'images/elaicheesecake.png',
-                       category: 'dessert',
-                       label:'',
-                       price:'2.99',
-                       description:'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms',
-                       comment: ''
-                    }
-                    ]">
-                    <!--
-                        ng-init permite inicializar una expresión desde el html
-                        pero en projectos reales no deberia usarse, se debería
-                        hacer en un controlador.
-                    -->
-        <div class="row row-content">
-            <div class="col-xs-12">
-                <ul class="media-list">
-                    <li class="media" ng-repeat="dish in dishes">
-                      <!-- ng-repeat permite recorrer una expresión ya sea de tipo
-                          objeto o array
-                      -->
-                        <div class="media-left media-middle">
-                            <a href="#">
-                                <img class="media-object img-thumbnail" ng-src={{dish.image}} alt="Uthappizza">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <h2 class="media-heading">{{dish.name}}
-                      <span class="label label-danger">{{dish.label}}</span>
-                      <span class="badge">{{dish.price | currency}}</span></h2>
-                            <p>{{dish.description}}</p>
-                            <p>Comment: {{dish.comment}}</p>
-                            <p>Type your comment:
-                                <input type="text" ng-model="dish.comment">
-                                <!-- ng-model permite atar un campo a una
-                                     expresión, esto quiere decir que si
-                                     escribimos algo en el campo inmediatamente
-                                     se cambia en la expresión.
-                                -->
-                            </p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+  <div class="container">
+      <div class="row row-content">
+          <div class="col-xs-12" ng-controller="menuController as menuCtrl">
+          <!-- ng-controller es el modulo que provee toda la lógica y que
+               se definio en el script con el nombre menuController.
+          -->
+              <ul class="media-list">
+                  <li class="media" ng-repeat="dish in menuCtrl.dishes">
+                  <!-- ng-repeat permite recorrer una expresión ya sea de tipo
+                      objeto o array.
+                      se accede a dish por medio del controlador al cual
+                      se a renombrado como menuCtrl.
+                   -->
+                      <div class="media-left media-middle">
+                          <a href="#">
+                              <img class="media-object img-thumbnail" ng-src={{dish.image}} alt="Uthappizza">
+                          </a>
+                      </div>
+                      <div class="media-body">
+                          <h2 class="media-heading">{{dish.name}}
+                          <span class="label label-danger">{{dish.label}}</span>
+                          <span class="badge">{{dish.price | currency}}</span></h2>
+                          <p>{{dish.description}}</p>
+                          <p>Comment: {{dish.comment}}</p>
+                          <p>Type your comment:
+                              <input type="text" ng-model="dish.comment">
+                              <!-- ng-model permite atar un campo a una
+                                   expresión, esto quiere decir que si
+                                   escribimos algo en el campo inmediatamente
+                                   se cambia en la expresión.
+                              -->
+                          </p>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
 
 </body>
 
 </html>
 
 <script src="../bower_components/angular/angular.min.js"></script>
+<script>
+    // Se definio la raiz de la aplicación.
+    var app = angular.module('confusionApp', []);
+    /* Se creo un controlador para centralizar toda
+    la funcionalidad y asi modularizar la aplicación.
+    */
+    app.controller('menuController', function() {
+        /*La variable dish que antes se definio en el ng-init
+        ahora se definio en el controlador como debe de ser
+        */
+        var dishes = [{
+            name: 'Uthapizza',
+            image: 'images/uthapizza.png',
+            category: 'mains',
+            label: 'Hot',
+            price: '4.99',
+            description: 'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
+            comment: ''
+        }, {
+            name: 'Zucchipakoda',
+            image: 'images/zucchipakoda.png',
+            category: 'appetizer',
+            label: '',
+            price: '1.99',
+            description: 'Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce',
+            comment: ''
+        }, {
+            name: 'Vadonut',
+            image: 'images/vadonut.png',
+            category: 'appetizer',
+            label: 'New',
+            price: '1.99',
+            description: 'A quintessential ConFusion experience, is it a vada or is it a donut?',
+            comment: ''
+        }, {
+            name: 'ElaiCheese Cake',
+            image: 'images/elaicheesecake.png',
+            category: 'dessert',
+            label: '',
+            price: '2.99',
+            description: 'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms',
+            comment: ''
+        }];
+
+        this.dishes = dishes;
+    });
+</script>

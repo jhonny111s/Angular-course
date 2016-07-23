@@ -15,3 +15,12 @@ introduction-to-angular
   las directivas básicas de angular: <a href="https://docs.angularjs.org/api/ng/directive/ngApp" target="_blank">ng-app</a>, <a href="https://docs.angularjs.org/api/ng/directive/ngInit" target="_blank">ng-init</a>, <a href="https://docs.angularjs.org/api/ng/directive/ngModel" target="_blank">ng-model</a>, <a href="https://docs.angularjs.org/api/ng/directive/ngRepeat" target="_blank">ng-repeat</a>.
 - Para visualizar el resultado debemos primero correr <code>bower install</code>
   y luego abrir en el navegador el archivo <code>menu.html</code>.
+
+
+model-view-controller
+---------------------
+
+- Se creo un script en <code>menu.html</code> el cual definirá la aplicación
+  de angular, y los controladores que definiran las funcionalidades.
+- Se agrego en la etiqueta ng-app el nombre de la app y se agrego la etiqueta
+  ng-controller para acceder a la lógica que definimos en el script.
