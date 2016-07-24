@@ -21,6 +21,6 @@ model-view-controller
 ---------------------
 
 - Se creo un script en <code>menu.html</code> el cual definirá la aplicación
-  de angular, y los controladores que definiran las funcionalidades.
+  de angular y los controladores que definiran las funcionalidades.
 - Se agrego en la etiqueta ng-app el nombre de la app y se agrego la etiqueta
-  <a href="https://docs.angularjs.org/api/ng/directive/ngController" target="_blank">ngController</a> para acceder a la lógica que definimos en el script.
+  <a href="https://docs.angularjs.org/api/ng/directive/ngController" target="_blank">ng-Controller</a> para acceder a la lógica que definimos en el script.
