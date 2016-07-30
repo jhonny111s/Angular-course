@@ -1,7 +1,8 @@
 # Curso de Angular
 
-##Ramas
+## Ramas
 
+**********************
 introduction-to-angular
 -----------------------
 
@@ -16,11 +17,23 @@ introduction-to-angular
 - Para visualizar el resultado debemos primero correr <code>bower install</code>
   y luego abrir en el navegador el archivo <code>menu.html</code>.
 
-
+*********************
 model-view-controller
 ---------------------
 
 - Se creo un script en <code>menu.html</code> el cual definirá la aplicación
   de angular y los controladores que definiran las funcionalidades.
 - Se agrego en la etiqueta ng-app el nombre de la app y se agrego la etiqueta
-  <a href="https://docs.angularjs.org/api/ng/directive/ngController" target="_blank">ng-Controller</a> para acceder a la lógica que definimos en el script.
+  <a href="https://docs.angularjs.org/api/ng/directive/ngController" target="_blank">ng-controller</a> para acceder a la lógica que definimos en el script.
+- El uso de la palabra `this` en el script nos dice que vamos
+  a poder acceder a estas variables desde el html.
+
+******
+filter
+------
+
+- Se uso el <a href="http://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp" target="_blank">tab de boostrap</a> para introducir el uso de filtros y el <a href="https://docs.angularjs.org/api/ng/directive/ngClass" target="_blank">ng-class</a> para usar la clase active
+o no, segun la función <code>isSelected</code> en el script.
+- Segun en el tab en que se encuentre se debe filtrar por categoria, esto significa que solo se debe mostrar la infromación de la variable
+  <code>dish</code> que sea igual a la categoria que se definio en la función <code>select</code> del script
+  y para esto usamos dentro del <code>repeat</code> el filtro <a href="https://docs.angularjs.org/api/ng/filter/filter" target="_blank">filter</a>, sin embargo existen <a href="https://docs.angularjs.org/api/ng/filter" target="_blank">otros filtros</a> muy utiles.
