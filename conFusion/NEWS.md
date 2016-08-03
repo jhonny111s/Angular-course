@@ -8,8 +8,8 @@ introduction-to-angular
 
 - Se instalo  <a href="https://nodejs.org/en/" target="_blank">nodejs</a>.
 - Se instalo el manejador de paquetes web <a href="https://bower.io/" target="_blank">bower</a>
-- Se creo el archivo <code>bower.json</code> en el cual se agregaron
-  las dependencias iniciales para trabajar: Boostrap, font-awesome y
+- Se creo en la raiz del proyecto el archivo <code>bower.json</code> en el cual se agregaron
+  las dependencias front-end iniciales para trabajar: Boostrap, font-awesome y
   Angular.
 - Se creo la jerarquia de carpetas para iniciar el proyecto.
 - Se creo el archivo <code>menu.html</code> donde se exploraron
@@ -37,3 +37,14 @@ o no, segun la función <code>isSelected</code> en el script.
 - Segun en el tab en que se encuentre se debe filtrar por categoria, esto significa que solo se debe mostrar la infromación de la variable
   <code>dish</code> que sea igual a la categoria que se definio en la función <code>select</code> del script
   y para esto usamos dentro del <code>repeat</code> el filtro <a href="https://docs.angularjs.org/api/ng/filter/filter" target="_blank">filter</a>, sin embargo existen <a href="https://docs.angularjs.org/api/ng/filter" target="_blank">otros filtros</a> muy utiles.
+
+
+  *****************
+
+grunt-and-gulp
+--------------
+
+- Se instaló `grunt` para correr automaticamnete el proyecto y que se reflejen los cambios inmediatamente en modo desarrollador.
+- Se debe instalar primero la interfaz de linea de comandos del grunt con `sudo npm install -g grunt-cli`, la cual se encarga de buscar y cargar el grunt local, además de aplicar la configuración del `Gruntfile.js`.
+- Se debe crear en la raiz del proyecto el archivo `package.json` para agregar los modulos de nodejs.
+- Se creo en la raiz del proyecto el archivo `Gruntfile.js`, el cual tendra toda la configuración de cada una de las tareas, explicadas en el archivo.
