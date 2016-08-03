@@ -48,3 +48,4 @@ grunt-and-gulp
 - Se debe instalar primero la interfaz de linea de comandos del grunt con `sudo npm install -g grunt-cli`, la cual se encarga de buscar y cargar el grunt local, además de aplicar la configuración del `Gruntfile.js`.
 - Se debe crear en la raiz del proyecto el archivo `package.json` para agregar los modulos de nodejs.
 - Se creo en la raiz del proyecto el archivo `Gruntfile.js`, el cual tendra toda la configuración de cada una de las tareas, explicadas en el archivo.
+- El script que se encontraba en `menu.html` se traslado a un archivo script en `app\scripts\app.js`.
