@@ -17,7 +17,6 @@ introduction-to-angular
 - Para visualizar el resultado debemos primero correr <code>bower install</code>
   y luego abrir en el navegador el archivo <code>menu.html</code>.
 
-*********************
 model-view-controller
 ---------------------
 
@@ -28,7 +27,6 @@ model-view-controller
 - El uso de la palabra `this` en el script nos dice que vamos
   a poder acceder a estas variables desde el html.
 
-******
 filter
 ------
 
@@ -38,8 +36,18 @@ o no, segun la función <code>isSelected</code> en el script.
   <code>dish</code> que sea igual a la categoria que se definio en la función <code>select</code> del script
   y para esto usamos dentro del <code>repeat</code> el filtro <a href="https://docs.angularjs.org/api/ng/filter/filter" target="_blank">filter</a>, sin embargo existen <a href="https://docs.angularjs.org/api/ng/filter" target="_blank">otros filtros</a> muy utiles.
 
+assignment-1
+------------
 
-  *****************
+- Se debe mostrar el detalle de cada `dish` en un html nuevo llamado `dishdetail.html` y para eso se
+  hace uso de la clase [media object](http://getbootstrap.com/components/#media) de boostrap, donde se utilizará
+  un media object anidado donde el segundo serán los comentarios del plato.
+- Cada comentario debe visualizarse con la clase [blockquote](http://getbootstrap.com/css/#type-blockquotes) y para
+  eso se recorren los comentarios y se usa el filtro de [fechas ](https://docs.angularjs.org/api/ng/filter/date) de angular  
+  para darle un formato.
+- Se deben ordenar los comentarios segun el criterio del usuario y para ello se usa el filtro [orderby](https://docs.angularjs.org/api/ng/filter/orderBy).
+
+*****************
 
 grunt-and-gulp
 --------------
