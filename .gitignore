@@ -3,3 +3,9 @@ node_modules
 
 #Componentes bower
 bower_components
+
+#Grunt and gulp
+dist/
+
+.tmp/
+npm-debug.log
