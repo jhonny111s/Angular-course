@@ -167,6 +167,7 @@ module.exports = function(grunt) {
     }
   });
 
+ //En el orden que aparcen se aplican las tareas
   grunt.registerTask('build', [
     'clean',
     'jshint',
