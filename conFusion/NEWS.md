@@ -54,6 +54,15 @@ grunt-and-gulp
 
 - Se instaló `grunt` para correr automaticamnete el proyecto y que se reflejen los cambios inmediatamente en modo desarrollador.
 - Se debe instalar primero la interfaz de linea de comandos del grunt con `sudo npm install -g grunt-cli`, la cual se encarga de buscar y cargar el grunt local, además de aplicar la configuración del `Gruntfile.js`.
-- Se debe crear en la raiz del proyecto el archivo `package.json` para agregar los modulos de nodejs.
+- Se debe crear en la raiz del proyecto, el archivo `package.json` para agregar los modulos de nodejs, para nuestro caso ya esta creado y basta con correr el comando `sudo npm install`.
 - Se creo en la raiz del proyecto el archivo `Gruntfile.js`, el cual tendra toda la configuración de cada una de las tareas, explicadas en el archivo.
 - El script que se encontraba en `menu.html` se traslado a un archivo script en `app\scripts\app.js`.
+- para correr grunt en la linea de comandos escribimos `grunt serve`
+
+
+- se instaló `gulp` el cual hace lo mismo que grunt, y es otra aproximaxion un poco más eficiente segun la comunidad de JS.
+- Se debe instalar primero la interfaz de linea de comandos del gulp con `sudo npm install -g gulp` la cual se encarga de buscar y cargar el grulp local, además de aplicar la configuración del `gulpfile.js`.
+- Se debe crear en la raiz del proyecto, el archivo `package.json` para agregar los modulos de nodejs, para nuestro caso ya esta creado y basta con correr el comando `sudo npm install`.
+- Se creo en la raiz del proyecto el archivo `gulpfile.js`, el cual tendra toda la configuración de cada una de las tareas, explicadas en el archivo.
+- para correr gulp en la linea de comandos escribimos `gulp watch`.
+- De ahora en adelante pueden utilizar cualquiera para visualizar los cambios en tiempo real, sinembargo se recomienda gulp. 
