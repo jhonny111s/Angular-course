@@ -65,4 +65,11 @@ grunt-and-gulp
 - Se debe crear en la raiz del proyecto, el archivo `package.json` para agregar los modulos de nodejs, para nuestro caso ya esta creado y basta con correr el comando `sudo npm install`.
 - Se creo en la raiz del proyecto el archivo `gulpfile.js`, el cual tendra toda la configuración de cada una de las tareas, explicadas en el archivo.
 - para correr gulp en la linea de comandos escribimos `gulp watch`.
-- De ahora en adelante pueden utilizar cualquiera para visualizar los cambios en tiempo real, sinembargo se recomienda gulp. 
+- De ahora en adelante pueden utilizar cualquiera para visualizar los cambios en tiempo real, sinembargo se recomienda gulp.
+
+scope
+-----
+
+- Se cambio la forma de trabajar con el controller y asi poder hacer uso del `$scope` y llamar directamente las variables y funciones en el `menu.html` sin tener que usar el prefijo `as` como se ha venido haciendo.
+- Se agrego el modulo `gulp-ng-annotate` al package.json para que al minificar el JS no se lo haga al scope y asi funcione correctamente.
+- Se cambio el nombre del controlador tanto en el `app.js` como en el `menu.html` y ademas se cambio todo `this` por `$scope`, resultando en la eliminación de todos los prefijos `menuCtrl.`.
