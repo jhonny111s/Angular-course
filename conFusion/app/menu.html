@@ -32,12 +32,16 @@ y buscara en el script la confusionApp-->
   <div class="container">
     <div class="row row-content" ng-controller="MenuController">
     <!--ng-controller es el modulo que provee toda la lógica y que
-        se definio en el script con el nombre menuController.
+        se definio en el script con el nombre MenuController.
     -->
       <div class="col-xs-12">
         <button ng-click="toggleDetails()" class="btn btn-xs btn-primary pull-right"                    type="button">
           {{showDetails ? 'Hide Details':'Show Details'}}
         </button>
+        <!-- el ng-click se encarga de ejecutar la función toggleDetails la cual
+             cambia el valor de la variable showDetails y segun esto cambia el
+             texto en el boton.
+        -->
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" ng-class="{active:isSelected(1)}">
           <!--el ng-class se encarga de agregar una clase, en este caso
@@ -74,6 +78,9 @@ y buscara en el script la confusionApp-->
                 <span class="label label-danger">{{dish.label}}</span>
                 <span class="badge">{{dish.price | currency}}</span></h2>
                 <p ng-show="showDetails">{{dish.description}}</p>
+                <!-- ng-show se encarga de mostrar u ocultar la description de
+                     un plato segun el valor booleano de la variable showDetails
+                -->
               </div>
             </li>
           </ul>

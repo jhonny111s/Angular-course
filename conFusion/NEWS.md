@@ -73,3 +73,4 @@ scope
 - Se cambio la forma de trabajar con el controller y asi poder hacer uso del `$scope` y llamar directamente las variables y funciones en el `menu.html` sin tener que usar el prefijo `as` como se ha venido haciendo.
 - Se agrego el modulo `gulp-ng-annotate` al package.json para que al minificar el JS no se lo haga al scope y asi funcione correctamente.
 - Se cambio el nombre del controlador tanto en el `app.js` como en el `menu.html` y ademas se cambio todo `this` por `$scope`, resultando en la eliminación de todos los prefijos `menuCtrl.`.
+- Se agrego la directiva [ngshow](https://docs.angularjs.org/api/ng/directive/ngShow) para mostrar u ocultar ([nghide](https://docs.angularjs.org/api/ng/directive/ngHide)) la descripción de los platos al presionar un boton.
