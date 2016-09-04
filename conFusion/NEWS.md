@@ -74,3 +74,11 @@ scope
 - Se agrego el modulo `gulp-ng-annotate` al package.json para que al minificar el JS no se lo haga al scope y asi funcione correctamente.
 - Se cambio el nombre del controlador tanto en el `app.js` como en el `menu.html` y ademas se cambio todo `this` por `$scope`, resultando en la eliminación de todos los prefijos `menuCtrl.`.
 - Se agrego la directiva [ngshow](https://docs.angularjs.org/api/ng/directive/ngShow) para mostrar u ocultar ([nghide](https://docs.angularjs.org/api/ng/directive/ngHide)) la descripción de los platos al presionar un boton.
+
+forms
+-----
+
+- Se creo un nuevo html para introducir el uso de los formularios llamado `contactus.html`.
+- Se creo en `app.js` un nuevo controlador llamado `ContactController` el cual se encargara del funcionamiento del formulario.
+- se creo en `app.js` un nuevo controlador llamado `FeedbackController` para introducir las validación de los campos del formulario, los cuales deben tener un `name` para referenciarlos en los errores.
+- Para mostrar u ocultar los mensajes de error del [formulario](https://docs.angularjs.org/api/ng/directive/form) se uso cerca del `input` un `span` que contiene los [servicios](https://docs.angularjs.org/api/ng/type/ngModel.NgModelController) que brinda angular para las validaciones. 
