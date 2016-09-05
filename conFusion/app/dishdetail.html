@@ -2,107 +2,125 @@
 <html lang="en" ng-app="confusionApp">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--The above 3 meta tags *must* come first in the head; any other head
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--The above 3 meta tags *must* come first in the head; any other head
         content must come *after* these tags -->
-    <title>Ristorante Con Fusion: Menu</title>
-    <!-- Bootstrap -->
-    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="styles/bootstrap-social.css" rel="stylesheet">
-    <link href="styles/mystyles.css" rel="stylesheet">
+  <title>Ristorante Con Fusion: Menu</title>
+  <!-- Bootstrap -->
+  <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="styles/bootstrap-social.css" rel="stylesheet">
+  <link href="styles/mystyles.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 
 <body>
-    <div class="container" ng-controller="dishDetailController">
-        <div class="row row-content">
-            <div class="col-xs-12">
-                <div class="media">
-                    <div class="media-left media-middle">
-                        <a href="#">
-                            <img class="media-object img-thumbnail" ng-src={{dish.image}} alt="Uthappizza">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">{{dish.name}}</h4> {{dish.description}}
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-9 col-xs-offset-1">
-                <p><strong>Cumstomer comments</strong> <cite>sortedby</cite>:
-                    <input type="text" ng-model="sortedby">
-                </p>
-                <blockquote ng-repeat="comment in dish.comments | orderBy: sortedby ">
-                  <!--Los filtros siempre siguen a la expresión a que se le va aplicar
+  <div class="container" ng-controller="DishDetailController">
+    <div class="row row-content">
+      <div class="col-xs-12">
+        <div class="media">
+          <div class="media-left media-middle">
+            <a href="#">
+              <img class="media-object img-thumbnail" ng-src={{dish.image}} alt="Uthappizza">
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">{{dish.name}}</h4> {{dish.description}}
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-9 col-xs-offset-1">
+        <p><strong>Cumstomer comments</strong> <cite>sortedby</cite>:
+          <input type="text" ng-model="sortedby">
+        </p>
+        <blockquote ng-repeat="comment in dish.comments | orderBy: sortedby ">
+          <!--Los filtros siempre siguen a la expresión a que se le va aplicar
                       de la siguente forma ""| filtro: valor" y existen varios que ya
                       se mencionaron en el archivo NEWS-->
-                    <p>{{comment.comment}}</p>
-                    <footer>{{comment.author}} <cite title="Source Title">{{comment.date | date: 'fullDate'}}</cite></footer>
-                </blockquote>
+          <p>{{comment.comment}}</p>
+          <footer>{{comment.author}} <cite title="Source Title">{{comment.date | date: 'fullDate'}}</cite></footer>
+        </blockquote>
+      </div>
+      <div class="col-xs-9 col-xs-offset-1" ng-controller="DishCommentController">
+        <ul class="list-unstyled">
+          <p>Task 3: Here you include the code to show the live preview of the comment</p>
+          <blockquote>
+            <p>{{dataForm.comment}}</p>
+            <footer>{{dataForm.author}}</footer>
+          </blockquote>
+          <p>The comment should be shown only when the form contains valid information and is not pristine</p>
+        </ul>
+        <form class="form-horizontal" name="commentForm" ng-submit="submitComment()" novalidate>
+          <p>Task 1: Design the form to submit the comments</p>
+          <p>Task 2: You need to validate that the user name and comments are entered</p>
+
+          <div class="form-group">
+            <label for="author" class="col-sm-2 control-label">Your name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="author" name="author" placeholder="Enter First Name" ng-model="dataForm.author" required>
             </div>
-        </div>
+          </div>
+
+          <div class="form-group">
+            <label for="rating" class="col-sm-2 control-label">Number of starts</label>
+            <div class="col-sm-10">
+
+              <label class="radio-inline">
+    <input type="radio" ng-model="dataForm.rating" value="1">
+    1
+  </label>
+              <label class="radio-inline">
+    <input type="radio" ng-model="dataForm.rating" value="2">
+    2
+  </label>
+              <label class="radio-inline">
+    <input type="radio" ng-model="dataForm.rating" value="3">
+    3
+  </label>
+              <label class="radio-inline">
+    <input type="radio" ng-model="rating" value="4">
+    4
+  </label>
+              <label class="radio-inline">
+    <input type="radio" ng-model="dataForm.rating" value="5">
+    5
+  </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="comment" class="col-sm-2 control-label">Your comments</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" rows="12" ng-model="dataForm.comment">
+                    </textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-primary">Submit comment</button>
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+
 
     </div>
 
-    <script src="../bower_components/angular/angular.min.js"></script>
-    <script>
-        var app = angular.module('confusionApp', []);
+  </div>
 
-        app.controller('dishDetailController', ['$scope', function($scope) {
-            //variable que inicializa el filtro, y puede se cualquiera dentro de comments
-            var sortedby = '-author';
-            var dish = {
-                name: 'Uthapizza',
-                image: 'images/uthapizza.png',
-                category: 'mains',
-                label: 'Hot',
-                price: '4.99',
-                description: 'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
-                comments: [{
-                        rating: 5,
-                        comment: "Imagine all the eatables, living in conFusion!",
-                        author: "John Lemon",
-                        date: "2012-10-16T17:57:28.556094Z"
-                    }, {
-                        rating: 4,
-                        comment: "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
-                        author: "Paul McVites",
-                        date: "2014-09-05T17:57:28.556094Z"
-                    }, {
-                        rating: 3,
-                        comment: "Eat it, just eat it!",
-                        author: "Michael Jaikishan",
-                        date: "2015-02-13T17:57:28.556094Z"
-                    }, {
-                        rating: 4,
-                        comment: "Ultimate, Reaching for the stars!",
-                        author: "Ringo Starry",
-                        date: "2013-12-02T17:57:28.556094Z"
-                    }, {
-                        rating: 2,
-                        comment: "It's your birthday, we're gonna party!",
-                        author: "25 Cent",
-                        date: "2011-12-02T17:57:28.556094Z"
-                    }
-
-                ]
-            };
-
-            $scope.dish = dish;
-            $scope.sortedby = sortedby;
-
-        }]);
-    </script>
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <script src="scripts/app.js"></script>
 
 </body>
 
