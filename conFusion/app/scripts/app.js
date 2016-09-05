@@ -151,10 +151,12 @@ angular.module('confusionApp', [])
 }])
 
 .controller('DishCommentController', ['$scope', function($scope) {
+
   $scope.dataForm = {
    author: "",
    rating: "5",
-   comment: ""
+   comment: "",
+   date: new Date().toISOString()
   };
 
  //Step 1: Create a JavaScript object to hold the comment from the form

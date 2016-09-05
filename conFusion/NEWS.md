@@ -81,4 +81,12 @@ forms
 - Se creo un nuevo html para introducir el uso de los formularios llamado `contactus.html`.
 - Se creo en `app.js` un nuevo controlador llamado `ContactController` el cual se encargara del funcionamiento del formulario.
 - se creo en `app.js` un nuevo controlador llamado `FeedbackController` para introducir las validación de los campos del formulario, los cuales deben tener un `name` para referenciarlos en los errores.
-- Para mostrar u ocultar los mensajes de error del [formulario](https://docs.angularjs.org/api/ng/directive/form) se uso cerca del `input` un `span` que contiene los [servicios](https://docs.angularjs.org/api/ng/type/ngModel.NgModelController) que brinda angular para las validaciones. 
+- Para mostrar u ocultar los mensajes de error del [formulario](https://docs.angularjs.org/api/ng/directive/form) se uso cerca del `input` un `span` que contiene los [servicios](https://docs.angularjs.org/api/ng/type/ngModel.NgModelController) que brinda angular para las validaciones.
+
+assignment-2
+------------
+
+- Se creo un formulario para agregar comentarios en el archivo `dishdetail.html` donde se debe mostrar la vista previa de los comentarios a medida que se escriba.
+- Se creo un controlador en `app.js` llamado `DishCommentController` encargado de albergar el comportamiento del formulario de comentarios.
+
+*****************
