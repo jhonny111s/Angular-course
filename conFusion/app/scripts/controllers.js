@@ -5,7 +5,7 @@ angular.module('confusionApp')
  $scope.tab = 1;
  $scope.filtText = '';
  $scope.showDetails = false;
- $scope.dishes= menuFactory.getDishes();
+ $scope.dishes = menuFactory.getDishes();
 
  $scope.select = function(setTab) {
   $scope.tab = setTab;
@@ -71,15 +71,17 @@ angular.module('confusionApp')
   };
 
  }])
-
- .controller('DishDetailController', ['$scope', '$routeParams', 'menuFactory', function($scope, $routeParams, menuFactory) {
-
-  var dish= menuFactory.getDish(parseInt($routeParams.id,10));
+ //ui.router
+ .controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function($scope, $stateParams, menuFactory) {
+  var dish = menuFactory.getDish(parseInt($stateParams.id, 10));
+  //ngroute
+  //.controller('DishDetailController', ['$scope', '$routeParams', 'menuFactory', function($scope, $routeParams, menuFactory) {
+  //var dish= menuFactory.getDish(parseInt($routeParams.id,10));
   $scope.dish = dish;
   var sortedby = '-author';
   $scope.sortedby = sortedby;
 
-}])
+ }])
 
 .controller('DishCommentController', ['$scope', function($scope) {
 
@@ -92,7 +94,7 @@ angular.module('confusionApp')
  };
 
  $scope.submitComment = function() {
-   console.log($scope.dataForm);
+  console.log($scope.dataForm);
   //Step 2: This is how you record the date
   //"The date property of your JavaScript object holding the comment" = new Date().toISOString();
   $scope.dataForm.date = new Date().toISOString();
@@ -111,5 +113,5 @@ angular.module('confusionApp')
    comment: "",
    date: ""
   };
-};
+ };
 }]);

@@ -116,3 +116,11 @@ ngroute-and-spa
 - Se agrego a cada elemento del array `dishes` en `service.js` un identificador para cuando se haga click sobre la imagen de un plato en `menu.html` direccione a `dishdetail`.
 - Se agrego al controlador `DishDetailController` el servicio de route llamado `$routeParams`, el cual permite tener acceso a los parametros de la ruta encontrada y asi ejecutar el punto anterior.
 - SPA (single-page-application) es un patron o tecnica que consiste en cargar solo una pagina y que apartir de esta responda a las acciones del usuario sin recargarse. Esto es lo que hicimos con el template `ìndex.html`.
+
+uirouter-and-spa
+----------------
+
+- Se instalo el [ui router](https://angular-ui.github.io/ui-router/) para hacer uso de multiples vistas y vistas anidadas.
+- Es importante tener lo más modularizado posible nuestro codigo y por eso se creo una nueva carpeta llamada `views` donde se gudaran todos los html que ya hemos hecho y dos nuevos `header.html` y `footer.html` para separar ese codigo que existe en el `index.html`
+- En el index vamos a utilizar [ui-view](https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views) donde se cargaran los diferentes html que componen la pagina (header-content-footer) segun la nueva configuración en `app.js` con el `stateProvider`.
+- Esta configuración es mejor que usar el ngroute y por defecto es el que se utilizara.
