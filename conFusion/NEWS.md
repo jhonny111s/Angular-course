@@ -100,4 +100,11 @@ factory-and-service
 - El metodo factory en `service.js` se usa para [inyectar una dependencias](https://docs.angularjs.org/guide/di) al modulo `confusionApp` en este caso todo el array dish por medio de unos metodos encapsulados en `menufac`.
 - Usualmente la inyección de dependencias se usa para definir directivas, servicios o filtros creados por nosotros mismos.
 - Se crearon dos archivos nuevos `controllers.js` y `service.js`, en controller se copiaron todos los controladores que se han creado y en el service se crearan todas las inyecciones de dependencia, mientras que el archivo `app.js` solo contendra la linea para llamar al modulo `confusionApp`.
-- Existen dos maneras de hacer inyección de dependencias, la primera es con `factory` el cual devuelve un objeto que contiene las funciones y el otro es `service` el cual no devuelve nada por que usa `this`, para profundizar la diferencia consulta [aqui](https://tylermcginnis.com/angularjs-factory-vs-service-vs-provider-5f426cfe6b8c#.x7rc3l40m)
+- Existen dos maneras de hacer inyección de dependencias, la primera es con `factory` el cual devuelve un objeto que contiene las funciones y el otro es `service` el cual no devuelve nada por que usa `this`, para profundizar la diferencia consulta [aqui](https://tylermcginnis.com/angularjs-factory-vs-service-vs-provider-5f426cfe6b8c#.x7rc3l40m).
+
+templates
+----------
+
+- Para introducir el uso de los [templates](https://lostechies.com/gabrielschenker/2013/12/28/angularjspart-6-templates/) se creo el html `index.html` el cual va a contener todo el código común a nuestro proyecto.
+- Se hace uso de la etiqueta [ngInclude](https://docs.angularjs.org/api/ng/directive/ngInclude) para incluir un template en este caso `menu.html`.
+- Los html que se crearon con anterioridad `menu.html`, `dishdetail.html`, `contactus.html` se modificaron para que solo tengan el contenido ya que en index estan los header y los scripts necesarios.
