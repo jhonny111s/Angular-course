@@ -88,5 +88,8 @@ assignment-2
 
 - Se creo un formulario para agregar comentarios en el archivo `dishdetail.html` donde se debe mostrar la vista previa de los comentarios a medida que se escriba.
 - Se creo un controlador en `app.js` llamado `DishCommentController` encargado de albergar el comportamiento del formulario de comentarios.
+- Se creo el formulario para enviar los comentarios el cual debe [validar](http://www.w3schools.com/angular/angular_validation.asp) los campos con las [directivas](https://docs.angularjs.org/api/ng/type/ngModel.NgModelController) que brinda angular.
+- Es importante observar que por medio del `name` del formulario y de los inputs se puede acceder a sus propiedades para hacer la validación.
+- La función `submitComment` en `DishCommentController` se encargara de ejecutar, guardar y limpiar el formulario, todo esto al dar click en el boton submit.
 
 *****************
