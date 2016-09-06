@@ -93,3 +93,10 @@ assignment-2
 - La función `submitComment` en `DishCommentController` se encargara de ejecutar, guardar y limpiar el formulario, todo esto al dar click en el boton submit.
 
 *****************
+
+factory-and-service
+-------------------
+
+- El metodo factory en `service.js` se usa para [inyectar una dependencias](https://docs.angularjs.org/guide/di) al modulo `confusionApp` en este caso todo el array dish por medio de unos metodos encapsulados en `menufac`.
+- Usualmente la inyección de dependencias se usa para definir directivas, servicios o filtros creados por nosotros mismos.
+- Se crearon dos archivos nuevos `controllers.js` y `service.js`, en controller se copiaron todos los controladores que se han creado y en el service se crearan todas las inyecciones de dependencia, mientras que el archivo `app.js` solo contendra la linea para llamar al modulo `confusionApp`.
