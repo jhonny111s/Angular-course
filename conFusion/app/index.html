@@ -83,7 +83,7 @@
     </div>
   </header>
 
-  <ng-include src="'menu.html'"></ng-include>
+  <ng-view></ng-view>
   <!-- Se inclye el contenido que se encuentra en otro html y el resto es estatico-->
 
   <footer class="row-footer">
@@ -131,6 +131,7 @@
 
   <!-- build:js scripts/main.js -->
   <script src="../bower_components/angular/angular.min.js"></script>
+  <script src="../bower_components/angular-route/angular-route.min.js"></script>
   <script src="scripts/app.js"></script>
   <script src="scripts/controllers.js"></script>
   <script src="scripts/services.js"></script>

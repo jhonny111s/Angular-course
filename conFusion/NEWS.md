@@ -106,5 +106,13 @@ templates
 ----------
 
 - Para introducir el uso de los [templates](https://lostechies.com/gabrielschenker/2013/12/28/angularjspart-6-templates/) se creo el html `index.html` el cual va a contener todo el código común a nuestro proyecto.
-- Se hace uso de la etiqueta [ngInclude](https://docs.angularjs.org/api/ng/directive/ngInclude) para incluir un template en este caso `menu.html`.
+- Se hace uso de la etiqueta [ngInclude](https://docs.angularjs.org/api/ng/directive/ngInclude) para incluir un template estatico en este caso `menu.html`.
 - Los html que se crearon con anterioridad `menu.html`, `dishdetail.html`, `contactus.html` se modificaron para que solo tengan el contenido ya que en index estan los header y los scripts necesarios.
+
+ngroute-and-spa
+---------------
+
+- Se instalo el [angular route](https://docs.angularjs.org/api/ngRoute) para incluir un template dinamico con la etiqueta [ng-view](https://docs.angularjs.org/api/ngRoute/directive/ngView) el cual se encarga de revisar los `href` y incluir el html segun el `routeprovider` que se configuro en `app.js`.
+- Se agrego a cada elemento del array `dishes` en `service.js` un identificador para cuando se haga click sobre la imagen de un plato en `menu.html` direccione a `dishdetail`.
+- Se agrego al controlador `DishDetailController` el servicio de route llamado `$routeParams`, el cual permite tener acceso a los parametros de la ruta encontrada y asi ejecutar el punto anterior.
+- SPA (single-page-application) es un patron o tecnica que consiste en cargar solo una pagina y que apartir de esta responda a las acciones del usuario sin recargarse. Esto es lo que hicimos con el template `ìndex.html`.
