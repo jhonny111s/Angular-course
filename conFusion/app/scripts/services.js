@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('confusionApp')
- .factory('menuFactory', function() {
-  // el metodo factory se usa para inyectar una dependencias
-  // a confusionApp en este caso todo el array dish por medio
-  // de unos metodos encapsulados en menufac
+ //.factory('menuFactory', function() {
+ // el metodo factory se usa para inyectar una dependencias
+ // a confusionApp en este caso todo el array dish por medio
+ // de unos metodos encapsulados en menufac
+ .service('menuFactory', function() {
 
   var dishes = [{
    name: 'Uthapizza',
@@ -140,14 +141,23 @@ angular.module('confusionApp')
    }]
   }];
 
-  var menufac = {};
+  //FACTORY
+  // var menufac = {};
+  //
+  // menufac.getDishes = function() {
+  //  return dishes;
+  // };
+  // menufac.getDish = function(index) {
+  //  return dishes[index];
+  // };
+  // return menufac;
 
-  menufac.getDishes = function() {
+  //SERVICE
+  this.getDishes = function() {
    return dishes;
   };
-  menufac.getDish = function(index) {
+  this.getDish = function(index) {
    return dishes[index];
   };
-  return menufac;
 
  });
