@@ -124,3 +124,13 @@ uirouter-and-spa
 - Es importante tener lo más modularizado posible nuestro codigo y por eso se creo una nueva carpeta llamada `views` donde se gudaran todos los html que ya hemos hecho y dos nuevos `header.html` y `footer.html` para separar ese codigo que existe en el `index.html`
 - En el index vamos a utilizar [ui-view](https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views) donde se cargaran los diferentes html que componen la pagina (header-content-footer) segun la nueva configuración en `app.js` con el `stateProvider`.
 - Esta configuración es mejor que usar el ngroute y por defecto es el que se utilizara.
+
+assignment-3
+------------
+
+- Se crearon dos html nuevos para completar el menu; `home.html`, `aboutus.html` los cuales haran uso de un service y de un factory respectivamente.
+- En `service.js` se crearon nuevos metodos: en el service `menuFactory` se obtienen las promociones y los platos, mientras que en el factory `corporateFactory` se obtienen los lideres.
+- En `controller.js` se crearon los controladores para el home llamado `ÌndexController` y para aboutus llamado `AboutusController` los cuales inyectan el service y el factory para obtener la información.
+- El archivo `app.js` se mejoro para utilizar las caracteristicas de `ui.router` para que el proyecto sea más legible y utilice el patron `SPA`.
+
+****************
