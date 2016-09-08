@@ -8,7 +8,14 @@ angular.module('confusionApp')
  $scope.filtText = '';
  $scope.showDetails = false;
 
- $scope.dishes = menuFactory.getDishes();
+
+ $scope.dishes = [];
+ menuFactory.getDishes()
+  .then(
+   function(response) {
+    $scope.dishes = response.data;
+   }
+  );
 
 
  $scope.select = function(setTab) {
@@ -84,9 +91,14 @@ angular.module('confusionApp')
 
 .controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function($scope, $stateParams, menuFactory) {
 
- var dish = menuFactory.getDish(parseInt($stateParams.id, 10));
-
- $scope.dish = dish;
+ $scope.dish = {};
+ menuFactory.getDish(parseInt($stateParams.id, 10))
+  .then(
+   function(response) {
+    $scope.dish = response.data;
+    $scope.showDish = true;
+   }
+  );
 
 }])
 
@@ -114,22 +126,31 @@ angular.module('confusionApp')
    author: "",
    date: ""
   };
-};
+ };
 }])
 
 // implement the IndexController and About Controller here
 .controller('IndexController', ['$scope', '$stateParams', 'menuFactory', 'corporateFactory', function($scope, $stateParams, menuFactory, corporateFactory) {
 
-  var leader = corporateFactory.getLeader(0);
-  var promotion = menuFactory.getPromotion(0);
-  var dish = menuFactory.getDish(0);
-  $scope.leader = leader;
-  $scope.promotion = promotion;
-  $scope.dish = dish;
+ var leader = corporateFactory.getLeader(0);
+ var promotion = menuFactory.getPromotion(0);
+
+ $scope.leader = leader;
+ $scope.promotion = promotion;
+
+ $scope.dish = {};
+
+ menuFactory.getDish(0)
+  .then(
+   function(response) {
+    $scope.dish = response.data;
+    $scope.showDish = true;
+   }
+  );
 }])
 
 .controller('AboutController', ['$scope', 'menuFactory', 'corporateFactory', function($scope, menuFactory, corporateFactory) {
-  var leaders = corporateFactory.getLeaders();
+ var leaders = corporateFactory.getLeaders();
 
-  $scope.leaders = leaders;
+ $scope.leaders = leaders;
 }]);
