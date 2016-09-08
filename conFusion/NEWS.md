@@ -134,3 +134,13 @@ assignment-3
 - El archivo `app.js` se mejoro para utilizar las caracteristicas de `ui.router` para que el proyecto sea más legible y utilice el patron `SPA`.
 
 ****************
+
+client-server
+-------------
+
+- Se instalo el modulo [json-server](https://github.com/typicode/json-server) globalmente, para simular de manera facil una `api rest` (CRUD a base de datos mediante url http).
+- Se creo una carpta llamada `json-server` la cual contiene un archivo llamado `db.json` en el cual cada llave principal de json puede representar una consulta a base de datos como por ejemplo `http://localhost:3000/dishes` donde dishes es una llave del array.
+- Para conocer como hacer un petición http segun si se desea consultar, actualizar, eliminar o agregar pueden buscar [metodos http](https://otroespacioblog.wordpress.com/2013/05/22/conoce-un-poco-sobre-los-metodos-http-en-rest/).
+- Como json-server tiene un servidor web estatico vamos a crear dentro una carpeta llamada `public`.
+- Se modifico el `gulpfile` para que inicie por el index, en especifico el `usemin` y el `browserSync`.
+- Ahora se puede correr el gulp con `gulp watch` para que genere la carpeta dist y una vez que lo haga copiamos el contenido de esta carpeta a la public de json-server, lo corremos con `json-server --watch db.json` y podremos ver que nuestro proyecto sigue funcionando normalmente.
