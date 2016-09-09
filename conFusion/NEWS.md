@@ -161,3 +161,8 @@ resource
 - Se incluye la llamada del mudulo en el `index.html` ya que es externo.
 - se agrego el modulo a la aplicación en `app.js` y en el `service.js` se inyecto en los factoy el `resource` para asi actualizar los metodos que obtienen los datos del servidor.
 - En los controladores se actualizo el metodo para obtener los dishes usando los metodos de [resource](https://docs.angularjs.org/api/ngResource/service/$resource) y se manejaron los errores con los `promises` que se indican en la [documentación](https://docs.angularjs.org/api/ng/service/$q).
+
+testing
+-------
+
+-
