@@ -139,8 +139,17 @@ client-server
 -------------
 
 - Se instalo el modulo [json-server](https://github.com/typicode/json-server) globalmente, para simular de manera facil una `api rest` (CRUD a base de datos mediante url http).
-- Se creo una carpta llamada `json-server` la cual contiene un archivo llamado `db.json` en el cual cada llave principal de json puede representar una consulta a base de datos como por ejemplo `http://localhost:3000/dishes` donde dishes es una llave del array.
+- Se creo una carpeta llamada `json-server` la cual contiene un archivo llamado `db.json` en el cual cada llave principal de json puede representar una consulta a base de datos como por ejemplo `http://localhost:3000/dishes` donde dishes es una llave del array.
 - Para conocer como hacer un petición http segun si se desea consultar, actualizar, eliminar o agregar pueden buscar [metodos http](https://otroespacioblog.wordpress.com/2013/05/22/conoce-un-poco-sobre-los-metodos-http-en-rest/).
 - Como json-server tiene un servidor web estatico vamos a crear dentro una carpeta llamada `public`.
 - Se modifico el `gulpfile` para que inicie por el index, en especifico el `usemin` y el `browserSync`.
-- Ahora se puede correr el gulp con `gulp watch` para que genere la carpeta dist y una vez que lo haga copiamos el contenido de esta carpeta a la public de json-server, lo corremos con `json-server --watch db.json` y podremos ver que nuestro proyecto sigue funcionando normalmente.
+- Ahora se puede correr el gulp con `gulp watch` para que genere la carpeta dist y una vez que lo haga copiamos el contenido de esta carpeta a la public de json-server, lo corremos con `json-server --watch db.json` estando parados en la carpeta json-server y podremos ver que nuestro proyecto sigue funcionando normalmente.
+
+http-service
+-------------
+
+- El [http](https://docs.angularjs.org/api/ng/service/$http) de angular es un service que permite comunicarse con un servidor e interactuar con este. Recuerden que ya tenemos un servidor de prueba que configuramos anteriormente.
+- En `service.js` vamos crear una [constante](https://docs.angularjs.org/api/auto/service/$provide#constant) que contenga la url de nuestro servidor `http://localhost:3000/` y en el menuFactory vamos a inyectar https para asi hacer una petición get y obtener los dishes.
+- Se deben cambiar tambien la forma de obtener los dishes en los controladores ya que debe hacer uso de un callback ya que http devuelve una promesa como se explica en la documentación de http.
+- Se debe cambiar cambiar la forma de acceder a un dish especifico ya que en el `db.json` el `_id` cambio a `id`.
+- Como al hacer una petición al servidor este puede fallar se deben trabajar los errores en la petición a dish de cada controlador que lo use, donde si se presenta un error el html debe mostrar el error correspondiente, como se hice en el archivo `menu.html` agregando el `ng-if` para mostrar o no la información.
