@@ -153,3 +153,11 @@ http-service
 - Se deben cambiar tambien la forma de obtener los dishes en los controladores ya que debe hacer uso de un callback ya que http devuelve una promesa como se explica en la documentación de http.
 - Se debe cambiar cambiar la forma de acceder a un dish especifico ya que en el `db.json` el `_id` cambio a `id`.
 - Como al hacer una petición al servidor este puede fallar se deben trabajar los errores en la petición a dish de cada controlador que lo use, donde si se presenta un error el html debe mostrar el error correspondiente, como se hice en el archivo `menu.html` agregando el `ng-if` para mostrar o no la información.
+
+resource
+---------
+
+- [ngresource](https://docs.angularjs.org/api/ngResource) es un modulo con soporte `RESTFUL` con el cual haremos lo mismo que con http pero a alto nivel osea más sencillo y potente.
+- Se incluye la llamada del mudulo en el `index.html` ya que es externo.
+- se agrego el modulo a la aplicación en `app.js` y en el `service.js` se inyecto en los factoy el `resource` para asi actualizar los metodos que obtienen los datos del servidor.
+- En los controladores se actualizo el metodo para obtener los dishes usando los metodos de [resource](https://docs.angularjs.org/api/ngResource/service/$resource) y se manejaron los errores con los `promises` que se indican en la [documentación](https://docs.angularjs.org/api/ng/service/$q).
