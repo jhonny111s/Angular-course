@@ -165,4 +165,11 @@ resource
 testing
 -------
 
--
+- Primero se debe instalar el framework que contiene los metodos para hacer los test llamado [jasmine](http://jasmine.github.io/2.3/introduction.html) y esto lo podemos hacer con un modulo de [npm](https://www.npmjs.com/package/jasmine-core).
+- Tambien vamos a instalar karma el cual se encarga de correr los test y como vamos a hacerlo desde consola debemos instalar la [linea de comandos](https://www.npmjs.com/package/karma-cli) y el [plugin](https://github.com/karma-runner/karma-jasmine) para que karma y jasmine funcionen juntos.
+- Luego debemos poner en marcha los entornos para hacer las pruebas y soporter la falta de un navegador cuando por ejemplo estemos en un servidor, para esto debemos usar [phantomjs](http://phantomjs.org/headless-testing.html) y soportar el [navegador de karma](https://www.npmjs.com/package/karma-phantomjs-launcher) y el de [chrome](https://github.com/karma-runner/karma-chrome-launcher), aunque puede soportar muchos más.
+- En resumen los test unitarios de `jasmine` son ejecutados por `karma` dentro del navegador `phantom`.
+- Se debe instalar el modulo de angular [ngMock](https://docs.angularjs.org/api/ngMock) con el cual podemos inyectar comportamientos en los test segun sea necesario.
+- Despues de todas esas instalaciones se debe crear una carpeta llamada `test` en la raiz del proyecto `conFusion` y alli configurar karma en el archivo `karma.conf.js`.
+- Se creo la carpeta `unit` dentro de test y otra carpeta `controllers` dentro de unit, donde se crearon todos los diferentes test de cada funcionalidad para cada controlador.
+- queda pendiente la explicación de los test e2e !.
