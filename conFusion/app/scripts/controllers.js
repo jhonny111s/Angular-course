@@ -133,20 +133,17 @@ angular.module('confusionApp')
    author: "",
    date: ""
   };
-};
+ };
 }])
 
 // implement the IndexController and About Controller here
-.controller('IndexController', ['$scope', '$stateParams', 'menuFactory', 'corporateFactory', function($scope, $stateParams, menuFactory, corporateFactory) {
-
- var leader = corporateFactory.getLeader(0);
- var promotion = menuFactory.getPromotion(0);
-
- $scope.leader = leader;
- $scope.promotion = promotion;
+.controller('IndexController', ['$scope', 'menuFactory', 'corporateFactory', function($scope, menuFactory, corporateFactory) {
 
  $scope.showDish = false;
+ $scope.leader = false;
+ $scope.promotion = false;
  $scope.message = "Loading ...";
+
  $scope.dish = menuFactory.getDishes().get({
    id: 0
   })
@@ -157,12 +154,45 @@ angular.module('confusionApp')
    },
    function(response) {
     $scope.message = "Error: " + response.status + " " + response.statusText;
-   }
-  );
+   });
+
+   $scope.promotion = corporateFactory.getLeaders().get({
+     id: 0
+    })
+    .$promise.then(
+     function(response) {
+      $scope.leader = response;
+      $scope.showLeader = true;
+     },
+     function(response) {
+      $scope.message = "Error: " + response.status + " " + response.statusText;
+     }
+    );
+
+   $scope.promotion = menuFactory.getPromotion().get({
+     id: 0
+    })
+    .$promise.then(
+     function(response) {
+      $scope.promotion = response;
+      $scope.showPromotion = true;
+     },
+     function(response) {
+      $scope.message = "Error: " + response.status + " " + response.statusText;
+     }
+    );
+
 }])
 
 .controller('AboutController', ['$scope', 'menuFactory', 'corporateFactory', function($scope, menuFactory, corporateFactory) {
- var leaders = corporateFactory.getLeaders();
+  $scope.leaders = false;
 
- $scope.leaders = leaders;
+ corporateFactory.getLeaders().query(
+  function(response) {
+   $scope.leaders = response;
+   $scope.showLeader = true;
+  },
+  function(response) {
+   $scope.message = "Error: " + response.status + " " + response.statusText;
+  });
 }]);
