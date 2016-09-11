@@ -173,3 +173,9 @@ testing
 - Despues de todas esas instalaciones se debe crear una carpeta llamada `test` en la raiz del proyecto `conFusion` y alli configurar karma en el archivo `karma.conf.js`.
 - Se creo la carpeta `unit` dentro de test y otra carpeta `controllers` dentro de unit, donde se crearon todos los diferentes test de cada funcionalidad para cada controlador.
 - queda pendiente la explicación de los test e2e !.
+
+assignment-4
+------------
+
+- Se actualizo el service para soportar las peticiones con resource de promotion y lidership, lo que llevo a agregar html para mostrar u ocultar los mensajes de error en `home.html` y `aboutus` y por supuesto los controladores que soportan estas funcionalidades.
+- Se creo un nuevo service para feedback llamado `feedbackFactory` el cual se encarga de guardar en el servidor los datos diligenciados por el usuario.
